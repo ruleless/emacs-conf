@@ -1,0 +1,22 @@
+(require 'lua-style)
+(require 'file-mode)
+(require 'cpp-style)
+(require 'ac-config)
+(require 'file-format)
+(require 'fci-style)
+(require 'markdown-style)
+(require 'keys-bindings)
+(require 'org-style)
+(require 'codingsystem-conf)
+(require 'switch-window)
+(require 'window-style)
+(require 'gtags-style)
+(require 'edit-style)
+
+(if (eq system-type 'windows-nt)
+    (progn
+      (require 'font-style)
+      (message "align font setted!"))
+  (message "align font note setted!"))
+
+(provide 'init-all)

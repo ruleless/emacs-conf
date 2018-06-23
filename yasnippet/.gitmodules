@@ -1,0 +1,6 @@
+[submodule "yasmate"]
+	path = yasmate
+	url = git@github.com:ruleless/yasmate.git
+[submodule "snippets"]
+	path = snippets
+	url = git@github.com:ruleless/yasnippet-snippets.git
