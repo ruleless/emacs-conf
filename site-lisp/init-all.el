@@ -1,6 +1,7 @@
-(require 'lua-style)
-(require 'file-mode)
 (require 'cpp-style)
+(require 'lua-style)
+(require 'js-style)
+
 (require 'ac-config)
 (require 'file-format)
 (require 'fci-style)
@@ -12,6 +13,7 @@
 (require 'window-style)
 (require 'gtags-style)
 (require 'edit-style)
+(require 'file-mode)
 
 (if (eq system-type 'windows-nt)
     (progn

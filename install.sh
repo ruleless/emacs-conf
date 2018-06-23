@@ -17,3 +17,4 @@ cp -rf snippets ~/.emacs.d/
 cp .emacs ~/.emacs
 
 echo "before start, check if 'ggtags-mode' is installed"
+echo "before start, check if 'js2-mode' is installed"

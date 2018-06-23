@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : addEvent
+#key : addev
+# --
+addEvent('${1:event}', function($2) {
+  $0
+});

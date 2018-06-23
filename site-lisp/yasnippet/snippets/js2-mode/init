@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : Constructor
+#key : cons
+# --
+initialize: function($1) {
+  $0
+}
