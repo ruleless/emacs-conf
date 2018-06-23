@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: htm
+# key: htm
+# --
+"<html><body><table width='100%'>${1:}"

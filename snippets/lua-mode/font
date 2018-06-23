@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: font
+# key: font
+# --
+<font color=#FFEBE2C3>${1:}</font>

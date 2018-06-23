@@ -67,8 +67,8 @@ Suitable for inclusion in `c-offsets-alist'."
 (defconst google-c-style
   `((c-recognize-knr-p . nil)
     (c-enable-xemacs-performance-kludge-p . t) ; speed up indentation in XEmacs
-    (c-basic-offset . 4)
-    (indent-tabs-mode . nil)
+    ;; (c-basic-offset . 4)
+    ;; (indent-tabs-mode . nil)
     (c-tab-always-indent . t)
     (c-comment-only-line-offset . 0)
     (c-hanging-braces-alist . ((defun-open after)
@@ -137,10 +137,7 @@ Suitable for inclusion in `c-offsets-alist'."
   Style. Meant to be added to `c-mode-common-hook'."
   (interactive)
   (make-local-variable 'c-tab-always-indent)
-  (setq c-tab-always-indent t)
-  (setq tab-width 4
-        ;; this will make sure spaces are used instead of tabs
-        indent-tabs-mode nil)
+  (setq c-tab-always-indent t)  
   (c-add-style "Google" google-c-style t))
 
 (defun google-make-newline-indent ()

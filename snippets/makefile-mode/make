@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: make
+# key: make
+# --
+LIBDIR:=../../lib
+INCDIR:=../cppunit/include:$(LIBDIR)
+
+VPATH:=$(INCDIR)
+
+CC:=clang++
+CXX:=clang++
+CXXFLAGS:=-g -Wall -I $(subst :, -I ,$(INCDIR))
+LDFLAGS:=-L $(LIBDIR) -lsnail -lrt -lcppunit -lpthread
+
+.Phony:all lib clean
+all:lib ${1:Name}
+
+lib:
+	cd $(LIBDIR) && $(MAKE)
+
+${1:$(yas/substr yas-text "[^: ]*")}:${1:$(yas/substr yas-text "[^: ]*")}.o
+	$(CXX) $^ $(LDFLAGS) -o $@
+
+${1:$(yas/substr yas-text "[^: ]*")}.o:${1:$(yas/substr yas-text "[^: ]*")}.cpp
+
+clean:
+	rm *.o ${1:$(yas/substr yas-text "[^: ]*")}

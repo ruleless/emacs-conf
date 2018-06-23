@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/plugins/color-theme-6.6.0")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
 
 (require 'color-theme)
 (color-theme-initialize)

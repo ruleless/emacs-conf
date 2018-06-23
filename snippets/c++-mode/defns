@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: defns
+# key: defns
+# --
+NAMESPACE_BEG(${1:Name})
+$2
+NAMESPACE_END // namespace ${1:$(yas/substr yas-text "[^: ]*")}

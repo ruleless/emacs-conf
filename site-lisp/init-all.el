@@ -19,4 +19,16 @@
       (message "align font setted!"))
   (message "align font note setted!"))
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
+(require 'init-solarized-theme)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/encrypt")
+(require 'init-encrypt)
+
+;; grep 设置(支持中文)
+(require 'color-moccur)
+
+;; 自动检测文本编码，以解决乱码问题
+(require 'unicad)
+
 (provide 'init-all)
