@@ -22,13 +22,10 @@
 ;; (elpy-enable)
 
 ;; set load directory
+(add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 
 ;; 加载自定义设置
 (require 'init-all)
 
-;; 变量定义
-(setq temp "~/.emacs.d/plugins/yasnippet/snippets")
-(setq mytemp "~/.emacs.d/snippets")
-(setq ssl "/home/liuy/proj/openssl")
-(setq demo "/home/liuy/proj/programming/openssl/demo")
+(require 'my-settings)

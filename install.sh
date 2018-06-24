@@ -15,6 +15,11 @@ echo "install snipptes ..."
 cp -rf snippets ~/.emacs.d/
 
 cp .emacs ~/.emacs
+if [ ! -f ~/.emacs.d/my-settings.el ];
+then
+	cp my-settings.el ~/.emacs.d/my-settings.el
+	echo "copy my-settings.el ..."
+fi
 
 echo "before start, check if 'ggtags-mode' is installed"
 echo "before start, check if 'js2-mode' is installed"
