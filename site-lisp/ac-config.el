@@ -29,24 +29,19 @@
 
 ;; 通过命令获取gcc搜索目录：echo "" | g++ -v -x c++ -E -""
 (setq ac-clang-flags
-      (mapcar (lambda (item)(concat "-I" item))
+	  (append
+	   (mapcar (lambda (item)(concat "-I" item))
               (split-string
                "
-/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7
-/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/x86_64-redhat-linux
-/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../include/c++/4.4.7/backward
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include
 /usr/local/include
-/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include
 /usr/include
-/home/liuy/proj/cill
-/home/liuy/proj/fasttun
-/home/liuy/proj/fasttun/cill/kmem
-/home/liuy/proj/nginx/src/core
-/home/liuy/proj/nginx/src/event
-/home/liuy/proj/nginx/src/os/unix
-/home/liuy/proj/nginx/objs
 "
-               )))
+               ))
+	   '("-std=c++11")))
 
 
 ;;;; 基于语法分析的智能补全
