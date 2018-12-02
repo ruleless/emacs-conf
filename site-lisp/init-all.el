@@ -1,6 +1,7 @@
 (require 'cpp-style)
 (require 'lua-style)
 (require 'js-style)
+(require 'cmake-mode)
 
 (require 'ac-config)
 (require 'file-format)

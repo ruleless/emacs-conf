@@ -18,6 +18,10 @@
 			(lambda ()
 			  (message "ac-makefile mode start!")
 			  (ac-common-setup)))
+  (add-hook 'cmake-mode-hook
+			(lambda ()
+			  (message "ac-cmake mode start!")
+			  (auto-complete-mode)))
   (global-auto-complete-mode t))
 (my-ac-config)
 

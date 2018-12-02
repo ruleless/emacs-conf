@@ -8,7 +8,7 @@
 				("\\.c\\'" . c++-mode)
 				("\\.impl\\'" . c++-mode)
 				("\\.inl\\'" . c++-mode)
-				("\\.txt\\'" . org-mode)
+				;; ("\\.txt\\'" . org-mode)
 				("\\Makefile\\'" . makefile-mode)
 				("\\.mak\\'" . makefile-mode)
 				("\\.css\\'" . css-mode))
