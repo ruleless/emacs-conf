@@ -15,6 +15,7 @@
 (require 'gtags-style)
 (require 'edit-style)
 (require 'file-mode)
+(require 'perl-style)
 
 (if (eq system-type 'windows-nt)
     (progn
