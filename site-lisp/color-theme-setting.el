@@ -7,4 +7,4 @@
 (color-theme-hober)
 ;; (color-theme-clarity)
 
-(provide 'color-settings)
+(provide 'color-theme-setting)

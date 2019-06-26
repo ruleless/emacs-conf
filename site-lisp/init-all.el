@@ -23,8 +23,9 @@
       (message "align font setted!"))
   (message "align font note setted!"))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
-(require 'init-solarized-theme)
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
+;; (require 'init-solarized-theme)
+(require 'color-theme-setting)
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/encrypt")
 (require 'init-encrypt)
