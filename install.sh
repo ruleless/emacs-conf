@@ -15,11 +15,16 @@ echo "install snipptes ..."
 cp -rf snippets ~/.emacs.d/
 
 cp .emacs ~/.emacs
-if [ ! -f ~/.emacs.d/my-settings.el ];
+if [ ! -f ~/.emacs.d/custom/my-settings.el ];
 then
-	cp my-settings.el ~/.emacs.d/my-settings.el
+    mkdir -p ~/.emacs.d/custom
+	cp my-settings.el ~/.emacs.d/custom/my-settings.el
 	echo "copy my-settings.el ..."
 fi
 
 echo "before start, check if 'ggtags-mode' is installed"
 echo "before start, check if 'js2-mode' is installed"
+echo "before start, check if 'company' is installed"
+echo "before start, check if 'dash' is installed"
+echo "before start, check if 'names' is installed"
+echo "before start, check if 'cquery' is installed"
