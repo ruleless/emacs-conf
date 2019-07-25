@@ -94,5 +94,7 @@
 ;; Tab补全或缩进
 ;; (global-set-key [(tab)] 'my-indent-or-complete)
 
+(global-set-key (kbd "C-j") 'newline-and-indent)
+
 
 (provide 'keys-bindings)
