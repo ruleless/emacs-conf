@@ -22,7 +22,7 @@ if [ ! -f ~/.emacs.d/custom/my-settings.el ]; then
 fi
 
 echo "install TabNine binary ..."
-if [ ! -d site-lisp/company-tabnine/binaries/2.0.2 ]; then
+if [ ! -d ~/.TabNine/2.0.2 ] && [ -d site-lisp/company-tabnine/binaries/2.0.2 ]; then
 	mkdir -p ~/.TabNine
 	cp -rf site-lisp/company-tabnine/binaries/2.0.2 ~/.TabNine/
 fi
