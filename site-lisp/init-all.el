@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/company-tabnine")
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
+
 
 (require 'cpp-style)
 (require 'lua-style)
@@ -28,6 +31,9 @@
 (require 'file-mode)
 (require 'perl-style)
 
+(require 'shell-mode-conf)
+(require 'elisp-mode-conf)
+
 
 (if (eq system-type 'windows-nt)
     (progn
@@ -39,6 +45,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
 ;; (require 'init-solarized-theme)
 (require 'theme-conf)
+
 (require 'init-encrypt)
 
 
