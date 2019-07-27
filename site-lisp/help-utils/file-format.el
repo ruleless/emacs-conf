@@ -2,6 +2,7 @@
   (interactive)
   (untabify (point-min) (point-max)))
 
+
 ;; (add-hook 'before-save-hook
 ;; 		  (lambda ()
 ;; 			(if (and
@@ -15,6 +16,7 @@
 ;; 				  (message "untabify"))
 ;; 			  )))
 
+
 (defun dos-unix () (interactive)
   (goto-char (point-min))
   (while (search-forward "\r" nil t) (replace-match "")))
@@ -22,5 +24,6 @@
 (defun unix-dos () (interactive)
   (goto-char (point-min))
   (while (search-forward "\n" nil t) (replace-match "\r\n")))
+
 
 (provide 'file-format)

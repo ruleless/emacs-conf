@@ -1,3 +1,5 @@
+(require 'switch-window)
+
 (defun other-window-switch (&optional n)
   "switch window in a easy way."
   (interactive "p")
@@ -14,4 +16,4 @@
 (global-set-key "\C-x\C-p" 'other-window-backward)
 (global-set-key "\C-x\C-n" 'other-window-forward)
 
-(provide 'window-style)
+(provide 'switch-window-conf)

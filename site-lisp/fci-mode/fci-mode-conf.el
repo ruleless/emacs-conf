@@ -10,4 +10,4 @@
 ;;   (lambda () (fci-mode 1)))
 ;; (global-fci-mode t)
 
-(provide 'fci-style)
+(provide 'fci-mode-conf)

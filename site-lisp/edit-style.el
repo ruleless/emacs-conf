@@ -1,12 +1,12 @@
 ;;;; 编辑器设置
 ;; 设置背景色和字体色
-(set-foreground-color "white")
-(set-background-color "black")
-(set-face-foreground 'secondary-selection"skyblue")
-(set-face-background 'secondary-selection"darkblue")
-(global-font-lock-mode t)
+;; (set-foreground-color "white")
+;; (set-background-color "black")
+;; (set-face-foreground 'secondary-selection"skyblue")
+;; (set-face-background 'secondary-selection"darkblue")
 ;; (set-foreground-color "grey")
 ;; (set-background-color "black")
+;; (global-font-lock-mode t)
 
 ;; 关闭烦人的出错时的提示声
 (setq visible-bell t)

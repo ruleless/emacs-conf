@@ -1,10 +1,13 @@
-;; color theme settting
-(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/themes")
-(load-theme 'wilson t)
-;; (load-theme 'dorsey t)
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
-;; (require 'init-solarized-theme)
-;; (require 'theme-conf)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/3rd")
+
+(require 'theme-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/font-conf")
+(if (eq system-type 'windows-nt)
+    (progn
+      (require 'font-conf)
+      (message "align font setted!"))
+  (message "align font not setted!"))
 
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
@@ -30,6 +33,9 @@
 (require 'org-mode-conf)
 (require 'perl-mode-conf)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/fci-mode")
+(require 'fci-mode-conf)
+
 
 ;; auto complete settting
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete")
@@ -38,21 +44,12 @@
 (require 'company-tabnine-conf)
 
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/help-utils")
 (require 'file-format)
-(require 'fci-style)
-(require 'keys-bindings)
-(require 'codingsystem-conf)
-(require 'switch-window)
-(require 'window-style)
-(require 'edit-style)
-(require 'file-mode)
 
 
-(if (eq system-type 'windows-nt)
-    (progn
-      (require 'font-style)
-      (message "align font setted!"))
-  (message "align font note setted!"))
+(add-to-list 'load-path "~/.emacs.d/site-lisp/switch-window")
+(require 'switch-window-conf)
 
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/encrypt")
@@ -62,9 +59,13 @@
 ;; grep 设置(支持中文)
 (require 'color-moccur)
 
-
 ;; 自动检测文本编码，以解决乱码问题
 (require 'unicad)
+
+
+(require 'keys-bindings)
+(require 'file-extension)
+(require 'edit-style)
 
 
 (provide 'init)
