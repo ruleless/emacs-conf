@@ -1,6 +1,9 @@
 #!/bin/sh
 
 
+mkdir -p  ~/.emacs.d
+
+
 echo "install site-lisp shell ..."
 cp -rf site-lisp ~/.emacs.d/
 
