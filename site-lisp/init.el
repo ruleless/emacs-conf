@@ -7,8 +7,18 @@
 ;; (require 'theme-conf)
 
 
-(require 'cpp-style)
-(require 'lua-style)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
+(require 'shell-mode-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
+(require 'elisp-mode-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/cpp-mode")
+(require 'cpp-mode-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lua-mode")
+(require 'lua-mode-conf)
+
 (require 'js-style)
 (require 'cmake-mode)
 (require 'ngx-conf-style)
@@ -33,12 +43,6 @@
 (require 'edit-style)
 (require 'file-mode)
 (require 'perl-style)
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
-(require 'shell-mode-conf)
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
-(require 'elisp-mode-conf)
 
 
 (if (eq system-type 'windows-nt)

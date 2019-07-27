@@ -1,5 +1,22 @@
 (require 'cc-mode)
 
+
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c++-mode-common-hook 'google-set-c-style)
+
+
+(defun cpp-tab-conf ()
+  (interactive)
+  (setq tab-width 4
+		c-basic-offset 4
+		;; this will make sure spaces are used instead of tabs
+		indent-tabs-mode nil))
+
+(add-hook 'c-mode-common-hook 'cpp-tab-conf)
+(add-hook 'c++-mode-common-hook 'cpp-tab-conf)
+
+
 ;; ¿®∫≈∆•≈‰
 (defun my-c-mode-auto-pair ()
   (interactive)
@@ -11,6 +28,8 @@
   (local-set-key (kbd "{") 'skeleton-pair-insert-maybe))
 
 (add-hook 'c-mode-hook 'my-c-mode-auto-pair)
+
+
 (setq skeleton-pair t)
 ;;(setq skeleton-pair-on-word t)
 
@@ -23,18 +42,5 @@
 ;; offset customizations not in my-c-style
 (setq c-offsets-alist '((member-init-intro . ++)))
 
-(require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c++-mode-common-hook 'google-set-c-style)
 
-(defun cpp-style ()
-  (interactive)
-  (setq tab-width 4
-		c-basic-offset 4
-		;; this will make sure spaces are used instead of tabs
-		indent-tabs-mode nil))
-
-(add-hook 'c-mode-common-hook 'cpp-style)
-(add-hook 'c++-mode-common-hook 'cpp-style)
-
-(provide 'cpp-style)
+(provide 'cpp-mode-conf)
