@@ -35,4 +35,4 @@
             ))
 
 
-(provide 'lua-mode-hook)
+(provide 'lua-mode-conf)

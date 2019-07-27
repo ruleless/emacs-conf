@@ -15,13 +15,20 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/cpp-mode")
 (require 'cpp-mode-conf)
+(require 'gtags-conf)
+(require 'cmake-mode)
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lua-mode")
 (require 'lua-mode-conf)
 
-(require 'js-style)
-(require 'cmake-mode)
-(require 'ngx-conf-style)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/js-mode")
+(require 'js-mode-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/misc-mode")
+(require 'ngx-conf-mode)
+(require 'markdown-mode-conf)
+(require 'org-mode-conf)
+(require 'perl-mode-conf)
 
 
 ;; auto complete settting
@@ -33,16 +40,12 @@
 
 (require 'file-format)
 (require 'fci-style)
-(require 'markdown-style)
 (require 'keys-bindings)
-(require 'org-style)
 (require 'codingsystem-conf)
 (require 'switch-window)
 (require 'window-style)
-(require 'gtags-style)
 (require 'edit-style)
 (require 'file-mode)
-(require 'perl-style)
 
 
 (if (eq system-type 'windows-nt)

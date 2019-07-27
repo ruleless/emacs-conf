@@ -1,10 +1,11 @@
 (setq org-directory "~")
 (setq org-todo-keywords
-	  '((sequence "TODO(t)" "PROCESSING(p!)" "|" "DONE(d!)")))
+      '((sequence "TODO(t)" "PROCESSING(p!)" "|" "DONE(d!)")))
 
 (setq org-log-done 'time)
 
 (setq org-src-fontify-natively t)
+
 
 ;; key binding
 (global-set-key "\C-cl" 'org-store-link)
@@ -13,6 +14,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 
 ;; capture
 ;; (setq org-directory "~")
@@ -24,6 +26,7 @@
 		 "* %?")
 		("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
 		 "* %?\nInput： %U\n  %i")))
+
 
 ;; refile
 (defun km/org-refile-to-other-file (file &optional maxlevel)
@@ -62,4 +65,4 @@ MAXLEVEL (defaults to 2)."
            `((,buffer-file :maxlevel . ,maxlevel))))))
 
 
-(provide 'org-style)
+(provide 'org-mode-conf)
