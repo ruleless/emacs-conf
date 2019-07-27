@@ -43,6 +43,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/company-tabnine")
 (require 'company-tabnine-conf)
 
+;; yasnippet
+(require 'yasnippet-conf)
+
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/help-utils")
 (require 'file-format)
