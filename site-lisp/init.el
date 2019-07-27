@@ -1,9 +1,10 @@
-(add-to-list 'load-path "~/.emacs.d/site-lisp/encrypt")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/company-tabnine")
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
+;; color theme settting
+(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/themes")
+(load-theme 'wilson t)
+;; (load-theme 'dorsey t)
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
+;; (require 'init-solarized-theme)
+;; (require 'theme-conf)
 
 
 (require 'cpp-style)
@@ -13,8 +14,10 @@
 (require 'ngx-conf-style)
 
 
-;; 自动补全
+;; auto complete settting
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete")
 ;; (require 'ac-config)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/company-tabnine")
 (require 'company-tabnine-conf)
 
 
@@ -31,7 +34,10 @@
 (require 'file-mode)
 (require 'perl-style)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/shell-mode")
 (require 'shell-mode-conf)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
 (require 'elisp-mode-conf)
 
 
@@ -42,18 +48,16 @@
   (message "align font note setted!"))
 
 
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/solarized-theme")
-;; (require 'init-solarized-theme)
-(require 'theme-conf)
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/encrypt")
 (require 'init-encrypt)
 
 
 ;; grep 设置(支持中文)
 (require 'color-moccur)
 
+
 ;; 自动检测文本编码，以解决乱码问题
 (require 'unicad)
 
 
-(provide 'init-all)
+(provide 'init)

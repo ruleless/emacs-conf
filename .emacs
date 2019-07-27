@@ -1,6 +1,7 @@
 ;; self imformation
 (setq user-full-name "ruleless")
 
+
 ;; server mode
 (require 'server)
 (when (and (= emacs-major-version 23)
@@ -11,6 +12,7 @@
                                         ; on windows.
 (server-start)
 
+
 ;; 使用函数list-packages安装插件
 ;; (require 'package)
 ;; (add-to-list 'package-archives
@@ -19,29 +21,13 @@
 
 (package-initialize)
 
-;;; python 开发环境
-;; (elpy-enable)
 
-;; set load directory
 (add-to-list 'load-path "~/.emacs.d/custom")
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(require 'my-settings)
 
-;; 加载自定义设置
-(require 'init-all)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(require 'init)
+
 
 (setq vc-handled-backends ())
-
-(require 'my-settings)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- '(package-selected-packages (quote (names dash js2-mode ggtags company))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
