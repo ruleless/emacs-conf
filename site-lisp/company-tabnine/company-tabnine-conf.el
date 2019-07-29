@@ -6,6 +6,7 @@
 (add-hook 'c-mode-hook 'company-mode)
 (add-hook 'c++-mode-hook 'company-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
+(add-hook 'sh-mode-hook 'company-mode)
 
 
 (add-to-list 'company-backends #'company-tabnine)
