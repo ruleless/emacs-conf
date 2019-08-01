@@ -97,5 +97,7 @@
 (global-set-key (kbd "C-j") 'newline-and-indent)
 (global-set-key (kbd "RET") 'electric-indent-just-newline)
 
+(global-set-key "\M-*" 'pop-tag-mark)
+
 
 (provide 'keys-bindings)
