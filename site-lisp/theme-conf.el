@@ -13,12 +13,12 @@
 
 ;; use 'customize-themes' to select themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/themes")
-;; (load-theme 'brin t)    ; OK, but comment is invisible 
+;; (load-theme 'brin t)    ; OK, but comment is invisible
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)
 ;; (load-theme 'graham t)
 ;; (load-theme 'granger t)
-;; (load-theme 'hickey t)    ; OK, but comment is invisible 
+;; (load-theme 'hickey t)    ; OK, but comment is invisible
 ;; (load-theme 'junio t)
 ;; (load-theme 'mccarthy t)
 ;; (load-theme 'odersky t)
