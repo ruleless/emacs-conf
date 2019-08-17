@@ -16,6 +16,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
 (require 'elisp-mode-conf)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/makefile-mode")
+(require 'makefile-mode-conf)
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/cpp-mode")
 (require 'cpp-mode-conf)
 (require 'gtags-conf)
