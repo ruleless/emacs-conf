@@ -16,6 +16,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/elisp-mode")
 (require 'elisp-mode-conf)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/go-mode")
+(require 'go-mode-conf)
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/makefile-mode")
 (require 'makefile-mode-conf)
 

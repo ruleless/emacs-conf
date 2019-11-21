@@ -1,3 +1,5 @@
+;; TabNine configuration
+
 (require 'company-tabnine)
 
 
@@ -7,6 +9,10 @@
 (add-hook 'c++-mode-hook 'company-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (add-hook 'sh-mode-hook 'company-mode)
+(add-hook 'makefile-mode-hook 'company-mode)
+(add-hook 'js2-mode-hook 'company-mode)
+(add-hook 'js-mode-hook 'company-mode)
+(add-hook 'go-mode-hook 'company-mode)
 
 
 (add-to-list 'company-backends #'company-tabnine)
