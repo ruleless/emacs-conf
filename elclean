@@ -56,7 +56,7 @@ then
 	exit 0
 fi
 
-# find \( -name "*.el" \) -exec $0 {} \;
+find \( -name "*.el" \) -exec $0 {} \;
 
 line_count=`find \( -name "*.el" \) -exec cat {} \; | awk 'BEGIN{c} {if (length>0) c+=1;} END{print c}'`
 echo "total line count of source file: $line_count"  
