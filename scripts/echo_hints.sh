@@ -21,7 +21,7 @@ function echo_hints()
 function echo_hints_of_go_mode_dependencies()
 {
     cat <<EOF
-Go get these tools for 'go-mode':
+Go get these tools for 'go-mode'(see: https://legends2k.github.io/note/go_setup/):
 
   go get -u github.com/mdempsky/gocode
   go get github.com/rogpeppe/godef
