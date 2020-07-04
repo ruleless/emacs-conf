@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-. ./scripts/
+. ./scripts/echo_hints.sh
 
-mkdir -p  ~/.emacs.d/echo_hints.sh
+mkdir -p  ~/.emacs.d
 
 echo "install site-lisp shell ..."
 cp -rf site-lisp ~/.emacs.d/
@@ -30,4 +30,7 @@ if [ ! -d ~/.TabNine/2.8.6 ] && [ -d ./.TabNine/2.8.6 ]; then
 	cp -rf ./.TabNine/2.8.6 ~/.TabNine/
 fi
 
+echo ""
 echo_hints
+echo ""
+echo_hints_of_go_mode_dependencies
