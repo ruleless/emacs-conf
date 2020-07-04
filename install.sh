@@ -1,8 +1,8 @@
 #!/bin/sh
 
+. ./scripts/
 
-mkdir -p  ~/.emacs.d
-
+mkdir -p  ~/.emacs.d/echo_hints.sh
 
 echo "install site-lisp shell ..."
 cp -rf site-lisp ~/.emacs.d/
@@ -25,15 +25,9 @@ if [ ! -f ~/.emacs.d/custom/my-settings.el ]; then
 fi
 
 echo "install TabNine binary ..."
-if [ ! -d ~/.TabNine/2.0.2 ] && [ -d site-lisp/company-tabnine/binaries/2.0.2 ]; then
+if [ ! -d ~/.TabNine/2.8.6 ] && [ -d ./.TabNine/2.8.6 ]; then
 	mkdir -p ~/.TabNine
-	cp -rf site-lisp/company-tabnine/binaries/2.0.2 ~/.TabNine/
+	cp -rf ./.TabNine/2.8.6 ~/.TabNine/
 fi
 
-
-echo "before start, check if 'ggtags-mode' is installed"
-echo "before start, check if 'js2-mode' is installed"
-echo "before start, check if 'company' is installed"
-echo "before start, check if 'dash' is installed"
-echo "before start, check if 'names' is installed"
-# echo "before start, check if 'cquery' is installed"
+echo_hints
