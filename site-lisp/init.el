@@ -46,8 +46,8 @@
 ;; auto complete settting
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete")
 ;; (require 'ac-config)
-(add-to-list 'load-path "~/.emacs.d/site-lisp/company-tabnine")
-(require 'company-tabnine-conf)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/company-mode")
+(require 'company-mode-conf)
 
 ;; yasnippet
 (require 'yasnippet-conf)
