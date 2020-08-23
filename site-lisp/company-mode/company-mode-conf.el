@@ -12,9 +12,15 @@
 (add-hook 'makefile-mode-hook 'company-mode)
 (add-hook 'js2-mode-hook 'company-mode)
 (add-hook 'js-mode-hook 'company-mode)
-(add-hook 'go-mode-hook 'company-mode)
+(add-hook 'python-mode-hook 'company-mode)
 
 (add-to-list 'company-backends #'company-tabnine)
+
+(add-hook 'go-mode-hook
+          (lambda ()
+            (company-mode)
+            (set (make-local-variable 'company-backends) '(company-go company-tabnine))
+            ))
 
 ;; Trigger completion immediately.
 (setq company-idle-delay 0)
@@ -29,6 +35,5 @@
       '(company-tng-frontend
         company-pseudo-tooltip-frontend
         company-echo-metadata-frontend))
-
 
 (provide 'company-mode-conf)

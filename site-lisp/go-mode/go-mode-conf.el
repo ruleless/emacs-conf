@@ -13,8 +13,6 @@
 
 (add-hook 'go-mode-hook
           (lambda ()
-            (add-to-list 'company-backends 'company-go)
-            ;; (set (make-local-variable 'company-backends) '(company-go))
             (local-set-key (kbd "M-.") 'godef-jump)
             (go-eldoc-setup)
             ;; (add-hook 'before-save-hook 'gofmt-before-save)
