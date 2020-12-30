@@ -23,14 +23,9 @@
 (package-initialize)
 ;; (package-refresh-contents)
 
-
-(add-to-list 'load-path "~/.emacs.d/custom")
-(require 'my-settings)
-
-
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (require 'init)
-
+(require 'my-settings)
 
 (setq vc-handled-backends ())
 (custom-set-variables
