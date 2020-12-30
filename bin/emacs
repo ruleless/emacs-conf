@@ -1,7 +1,16 @@
 #!/bin/bash
 
+CONFDIR="$HOME/emacs.conf.d"
+
+if [ ! -f $CONFDIR/.emacs.d/site-lisp/my-settings.el ]; then
+    mkdir -p $CONFDIR/.emacs.d/site-lisp
+    echo "(provide 'my-settings)" > $CONFDIR/.emacs.d/site-lisp/my-settings.el
+fi
+
 docker run --detach-keys='ctrl-z,z' -it --rm --name emacs \
-       -v $HOME/my-settings.el:/root/.emacs.d/site-lisp/my-settings.el \
-       -v $HOME/.TabNine:/root/.TabNine \
+       -v $CONFDIR/.emacs.d/site-lisp/my-settings.el:/root/.emacs.d/site-lisp/my-settings.el \
+       -v $CONFDIR/.emacs.d/eshell:/root/.emacs.d/eshell \
+       -v $CONFDIR/.config:/root/.config \
+       -v $CONFDIR/.TabNine:/root/.TabNine \
        -v $HOME/work:/root/work \
        emacs

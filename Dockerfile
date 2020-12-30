@@ -9,8 +9,6 @@ COPY elpa/ /root/.emacs.d/elpa/
 COPY ac-dict/ /root/.emacs.d/ac-dict/
 COPY snippets/ /root/.emacs.d/snippets/
 COPY .emacs /root/.emacs
-COPY my-settings.el /root/.emacs.d/custom/my-settings.el
-COPY .TabNine/3.2.61/x86_64-unknown-linux-gnu/TabNine /root/.TabNine/3.2.61/x86_64-unknown-linux-gnu/TabNine
 
 RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse' > /etc/apt/sources.list \
   && echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse' >> /etc/apt/sources.list \
@@ -18,18 +16,30 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
   && echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse' >> /etc/apt/sources.list \
   && echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse' >> /etc/apt/sources.list \
   && apt-get update && apt-get install -y \
-    global \
     language-pack-zh-hans \
     fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming \
+    global gcc clang clangd-10 \
+    git \
   && rm -rf /var/lib/apt/lists/* \
+  && ln -s /usr/bin/clangd-10 /usr/bin/clangd \
   && echo 'LANG="zh_CN.UTF-8"' >> /etc/environment \
   && echo 'LANGUAGE="zh_CN:zh:en_US:en"' >> /etc/environment \
   && echo 'en_US.UTF-8 UTF-8' >> /var/lib/locales/supported.d/local \
   && echo 'zh_CN.UTF-8 UTF-8' >> /var/lib/locales/supported.d/local \
   && echo 'zh_CN.GBK GBK' >> /var/lib/locales/supported.d/local \
   && echo 'zh_CN GB2312' >> /var/lib/locales/supported.d/local \
-  && locale-gen \
-  && chmod 0775 /root/.TabNine/3.2.61/x86_64-unknown-linux-gnu/TabNine
+  && locale-gen
+
+# install golang
+ADD go1.15.6.linux-amd64.tar.gz /usr/local/
+ENV PATH "/usr/local/go/bin:$PATH"
+ENV GO111MODULE on
+ENV GOPROXY https://goproxy.cn,direct
+RUN go get -u github.com/mdempsky/gocode \
+  && go get github.com/rogpeppe/godef \
+  && go get -u github.com/dougm/goflymake \
+  && go get golang.org/x/tools/cmd/goimports \
+  && go get golang.org/x/tools/cmd/godoc
 
 WORKDIR /root
 
