@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker run --detach-keys='ctrl-z,z' -it --rm --name emacs \
+       -v $HOME/my-settings.el:/root/.emacs.d/site-lisp/my-settings.el \
+       -v $HOME/.TabNine:/root/.TabNine \
+       -v $HOME/work:/root/work \
+       emacs
