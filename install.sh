@@ -18,12 +18,6 @@ cp -rf snippets ~/.emacs.d/
 
 cp .emacs ~/.emacs
 
-if [ ! -f ~/.emacs.d/custom/my-settings.el ]; then
-    mkdir -p ~/.emacs.d/custom
-	cp my-settings.el ~/.emacs.d/custom/my-settings.el
-	echo "copy my-settings.el ..."
-fi
-
 echo "install TabNine binary ..."
 if [ ! -d ~/.TabNine/2.8.6 ] && [ -d ./.TabNine/2.8.6 ]; then
 	mkdir -p ~/.TabNine
