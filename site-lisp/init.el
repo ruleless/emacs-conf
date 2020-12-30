@@ -38,6 +38,7 @@
 (require 'markdown-mode-conf)
 (require 'org-mode-conf)
 (require 'perl-mode-conf)
+(require 'dockerfile-mode-conf)
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/fci-mode")
 (require 'fci-mode-conf)
