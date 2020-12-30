@@ -18,7 +18,7 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
   && apt-get update && apt-get install -y \
     language-pack-zh-hans \
     fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming \
-    global gcc clang clangd-10 \
+    global gcc g++ clang clangd-10 \
     git \
   && rm -rf /var/lib/apt/lists/* \
   && ln -s /usr/bin/clangd-10 /usr/bin/clangd \
@@ -32,7 +32,7 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
 
 # install golang
 ADD go1.15.6.linux-amd64.tar.gz /usr/local/
-ENV PATH "/usr/local/go/bin:$PATH"
+ENV PATH "/usr/local/go/bin:/root/go/bin:$PATH"
 ENV GO111MODULE on
 ENV GOPROXY https://goproxy.cn,direct
 RUN go get -u github.com/mdempsky/gocode \
