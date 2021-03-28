@@ -1,15 +1,5 @@
 FROM emacs:26.3
 
-ENV TERM xterm-256color
-ENV LANG "zh_CN.UTF-8"
-ENV LANGUAGE "zh_CN:zh:en_US:en"
-
-COPY site-lisp/ /root/.emacs.d/site-lisp/
-COPY elpa/ /root/.emacs.d/elpa/
-COPY ac-dict/ /root/.emacs.d/ac-dict/
-COPY snippets/ /root/.emacs.d/snippets/
-COPY .emacs /root/.emacs
-
 RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse' > /etc/apt/sources.list \
   && echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse' >> /etc/apt/sources.list \
   && echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse' >> /etc/apt/sources.list \
@@ -41,6 +31,18 @@ RUN go get -u github.com/mdempsky/gocode \
   && go get golang.org/x/tools/cmd/goimports \
   && go get golang.org/x/tools/cmd/godoc \
   && go get -u github.com/hhatto/gocloc/cmd/gocloc
+
+# 拷贝文件
+COPY site-lisp/ /root/.emacs.d/site-lisp/
+COPY elpa/ /root/.emacs.d/elpa/
+COPY ac-dict/ /root/.emacs.d/ac-dict/
+COPY snippets/ /root/.emacs.d/snippets/
+COPY .emacs /root/.emacs
+
+# 设置环境变量
+ENV TERM xterm-256color
+ENV LANG "zh_CN.UTF-8"
+ENV LANGUAGE "zh_CN:zh:en_US:en"
 
 WORKDIR /root
 
