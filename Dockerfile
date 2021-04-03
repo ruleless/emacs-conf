@@ -21,8 +21,8 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
   && locale-gen
 
 # install golang
-# ADD https://golang.org/dl/go1.16.3.linux-amd64.tar.gz /usr/local/ # 在线安装
-ADD go1.16.3.linux-amd64.tar.gz /usr/local/ # 需要将文件下载到本地
+# ADD https://golang.org/dl/go1.16.3.linux-amd64.tar.gz /usr/local/
+ADD go1.16.3.linux-amd64.tar.gz /usr/local/
 ENV PATH "/usr/local/go/bin:/root/go/bin:$PATH"
 ENV GO111MODULE on
 ENV GOPROXY https://goproxy.cn,direct
