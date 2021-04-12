@@ -31,7 +31,8 @@ RUN go get -u github.com/mdempsky/gocode \
   && go get -u github.com/dougm/goflymake \
   && go get golang.org/x/tools/cmd/goimports \
   && go get golang.org/x/tools/cmd/godoc \
-  && go get -u github.com/hhatto/gocloc/cmd/gocloc
+  && go get -u github.com/hhatto/gocloc/cmd/gocloc \
+  && go get -u golang.org/x/lint/golint
 
 # 拷贝文件
 COPY site-lisp/ /root/.emacs.d/site-lisp/
