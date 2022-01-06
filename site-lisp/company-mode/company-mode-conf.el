@@ -14,6 +14,7 @@
 (add-hook 'js-mode-hook 'company-mode)
 (add-hook 'python-mode-hook 'company-mode)
 (add-hook 'go-mode-hook 'company-mode)
+(add-hook 'cperl-mode-hook 'company-mode)
 
 (add-to-list 'company-backends #'company-tabnine)
 
