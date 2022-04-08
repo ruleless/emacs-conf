@@ -22,6 +22,7 @@
   (setq cperl-indent-level 4)
   (setq cperl-continued-statement-offset 0)
   (setq cperl-extra-newline-before-brace t)
+  (setq cperl-indent-parens-as-block t)
   (set-face-background 'cperl-array-face "wheat")
   (set-face-background 'cperl-hash-face "wheat")
   )
