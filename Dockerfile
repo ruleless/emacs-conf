@@ -22,17 +22,17 @@ RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe 
 
 # install golang
 # ADD https://golang.org/dl/go1.16.3.linux-amd64.tar.gz /usr/local/
-ADD go1.16.3.linux-amd64.tar.gz /usr/local/
+ADD go1.19.2.linux-amd64.tar.gz /usr/local/
 ENV PATH "/usr/local/go/bin:/root/go/bin:$PATH"
 ENV GO111MODULE on
 ENV GOPROXY https://goproxy.cn,direct
-RUN go get -u github.com/mdempsky/gocode \
-  && go get github.com/rogpeppe/godef \
-  && go get -u github.com/dougm/goflymake \
-  && go get golang.org/x/tools/cmd/goimports \
-  && go get golang.org/x/tools/cmd/godoc \
-  && go get -u github.com/hhatto/gocloc/cmd/gocloc \
-  && go get -u golang.org/x/lint/golint
+RUN go install github.com/mdempsky/gocode@latest \
+  && go install github.com/rogpeppe/godef@latest \
+  && go install github.com/dougm/goflymake@latest \
+  && go install golang.org/x/tools/cmd/goimports@latest \
+  && go install golang.org/x/tools/cmd/godoc@latest \
+  && go install github.com/hhatto/gocloc/cmd/gocloc@latest \
+  && go install golang.org/x/lint/golint@latest
 
 # 拷贝文件
 COPY site-lisp/ /root/.emacs.d/site-lisp/
